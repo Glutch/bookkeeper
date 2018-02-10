@@ -1,0 +1,6 @@
+exports.MOBILE = '@media (min-width: 400px)'
+exports.PHABLET = '@media (min-width: 550px)'
+exports.TABLET = '@media (min-width: 750px)'
+exports.BIGTABLET = '@media (min-width: 750px)'
+exports.DESKTOP = '@media (min-width: 1000px)'
+exports.DESKTOPHD = '@media (min-width: 1200px)'

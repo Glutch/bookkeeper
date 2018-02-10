@@ -1,0 +1,38 @@
+{
+  "name": "bookkeeper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently --kill-others 'npm run server:dev' 'npm run webpack'",
+    "server:dev": "cd server && nodemon index.js",
+    "server:deploy": "cd server && NODE_ENV=production pm2 start index.js --name bookio -i 0",
+    "server:reload": "pm2 reload bookio",
+    "client:build": "NODE_ENV=production webpack",
+    "webpack": "webpack-dev-server --inline --host 0.0.0.0 --colors --no-info"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "proxy-middleware": "^0.15.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-jss": "^8.2.1",
+    "react-router-dom": "^4.2.2",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.11.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "concurrently": "^3.5.1",
+    "nodemon": "^1.14.11",
+    "react-hot-loader": "^3.1.3"
+  }
+}

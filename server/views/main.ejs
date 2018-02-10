@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>bookkeeper</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+    <style>
+      <%
+      const fonts = [['UltraLight', 100], ['Regular', 300], ['Medium', 500], ['DemiBold', 600], ['Bold', 700], ['Heavy', 800]]
+      fonts.forEach(font => {
+      %>
+      @font-face {
+        font-family: 'Avenir Next';
+        src: url('/fonts/AvenirNext-<%- font[0] %>.woff') format('woff');
+        font-weight: <%- font[1] %>;
+        font-style: normal;
+      }
+      <% }) %>
+      * {
+        box-sizing: border-box;
+        word-wrap: break-word;
+      }
+      body {
+        margin: 0;
+        font-family: 'Avenir Next';
+        background: #eaeaea;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script src="/app.js"></script>
+  </body>
+</html>
